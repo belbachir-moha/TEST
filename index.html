@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil de Belbachir Mohammed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Belbachir Mohammed</h1>
+            <p>Passionné d'innovation et explorateur curieux</p>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <div class="profile-image">
+            <img src="moi.jpeg" alt="Belbachir Mohammed">
+        </div>
+        <div class="about-content">
+            <h2>À propos de moi</h2>
+            <p>Je suis Belbachir Mohammed, passionné par l'exploration de nouveaux horizons. Mon intérêt pour l'apprentissage constant me pousse à enrichir mes connaissances avec une curiosité particulière pour l’innovation.</p>
+        </div>
+    </section>
+
+    <!-- Hobbies and Goals Section -->
+    <section class="goals-hobbies">
+        <div class="goals">
+            <h2>Objectifs</h2>
+            <ul>
+                <li>Valider les deux semestres</li>
+                <li>Améliorer mes compétences techniques</li>
+                <li>Défi personnel en cours...</li>
+            </ul>
+        </div>
+        <div class="hobbies">
+            <h2>Loisirs</h2>
+            <ul>
+                <li>Sport</li>
+                <li>Cuisine</li>
+                <li>Explorer des nouveaux cafés et marchés</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Friends Table Section -->
+    <section class="friends">
+        <h2>Amis</h2>
+        <div class="friend-card">
+            <h3>Mouade</h3>
+            <p>Age: 20 | Ville: Casablanca</p>
+            <a href="https://exemple.com/ayman">Voir le profil</a>
+        </div>
+        <div class="friend-card">
+            <h3>Mounim</h3>
+            <p>Age: 20 | Ville: Casablanca</p>
+            <a href="https://exemple.com/fertat">Voir le profil</a>
+        </div>
+        <div class="friend-card">
+            <h3>Arham</h3>
+            <p>Age: 19 | Ville: Casablanca</p>
+            <a href="http://AlaaKotb-1.github.io">Voir le profil</a>
+        </div>
+        <div class="friend-card">
+            <h3>Issam</h3>
+            <p>Age: 20 | Ville: Casablanca</p>
+            <a href="https://exemple.com/ayman">Voir le profil</a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact">
+        <h2>Contactez-moi</h2>
+        <form id="contactForm">
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="button" onclick="validateForm()">Envoyer</button>
+            <p id="feedback" class="feedback"></p>
+        </form>
+    </section>
+
+    <!-- JavaScript for Form Validation -->
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+            const feedback = document.getElementById("feedback");
+
+            if (name === "" || email === "" || message === "") {
+                feedback.textContent = "Veuillez remplir tous les champs.";
+                feedback.style.color = "red";
+                return false;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                feedback.textContent = "Veuillez entrer une adresse email valide.";
+                feedback.style.color = "red";
+                return false;
+            }
+
+            feedback.textContent = "Formulaire soumis avec succès !";
+            feedback.style.color = "green";
+            document.getElementById("contactForm").reset();
+            return true;
+        }
+    </script>
+
+</body>
+</html>
